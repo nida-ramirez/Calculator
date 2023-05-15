@@ -1,0 +1,40 @@
+class Calculator {
+  private result: number;
+
+  constructor() {
+    this.result = 0;
+  }
+
+  add(num: number): void {
+    this.result += num;
+  }
+
+  subtract(num: number): void {
+    this.result -= num;
+  }
+
+  multiply(num: number): void {
+    this.result *= num;
+  }
+
+  divide(num: number): void {
+    if (num !== 0) {
+      this.result /= num;
+    } else {
+      console.error("Ошибка: деление на ноль!");
+    }
+  }
+
+  getResult(): number {
+    return this.result;
+  }
+}
+
+// Пример использования калькулятора
+const calculator = new Calculator();
+calculator.add(5);
+calculator.multiply(2);
+calculator.subtract(3);
+calculator.divide(2);
+
+console.log("Результат:", calculator.getResult());
